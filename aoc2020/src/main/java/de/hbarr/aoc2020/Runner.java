@@ -1,12 +1,13 @@
 package de.hbarr.aoc2020;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 public class Runner {
 
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) {
         ClassLoader classLoader = Runner.class.getClassLoader();
         Map<String, String> challenges = Map.of(
     //          "de.hbarr.aoc2020.day01.Challenge01",
@@ -24,8 +25,12 @@ public class Runner {
               //"de.hbarr.aoc2020.day03.Challenge01",
              //"data03.txt"
 
-                "de.hbarr.aoc2020.day03.Challenge02",
-                "data03.txt"
+//                "de.hbarr.aoc2020.day03.Challenge02",
+  //              "data03.txt",
+//                "de.hbarr.aoc2020.day04.Challenge01",
+//                "data04.txt",
+                "de.hbarr.aoc2020.day04.Challenge02",
+                "data04.txt"
 
         );
 
@@ -40,10 +45,8 @@ public class Runner {
 
     public static <T> T instantiate(final String className, final Class<T> type) {
         try {
-            return type.cast(Class.forName(className).newInstance());
-        } catch (InstantiationException
-                | IllegalAccessException
-                | ClassNotFoundException e) {
+            return type.cast(Class.forName(className).getDeclaredConstructor().newInstance());
+        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | NoSuchMethodException | InvocationTargetException e) {
             throw new IllegalStateException(e);
         }
     }
