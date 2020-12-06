@@ -10,27 +10,31 @@ public class Runner {
     public static void main(String[] args) {
         ClassLoader classLoader = Runner.class.getClassLoader();
         Map<String, String> challenges = Map.of(
-    //          "de.hbarr.aoc2020.day01.Challenge01",
-    //          "data01.txt",
+                /*
+                "de.hbarr.aoc2020.day01.Challenge01",
+                "data01.txt",
+                "de.hbarr.aoc2020.day01.Challenge02",
+                "data01.txt",
 
-    //          "de.hbarr.aoc2020.day01.Challenge02",
-    //          "data01.txt",
+                "de.hbarr.aoc2020.day02.Challenge01",
+                "data02.txt",
+                "de.hbarr.aoc2020.day02.Challenge02",
+                "data02.txt",
 
-    //          "de.hbarr.aoc2020.day02.Challenge01",
-    //          "data02.txt",
+                "de.hbarr.aoc2020.day03.Challenge01",
+                "data03.txt",
+                "de.hbarr.aoc2020.day03.Challenge02",
+                "data03.txt",
 
-    //          "de.hbarr.aoc2020.day02.Challenge02",
-    //          "data02.txt",
-
-              //"de.hbarr.aoc2020.day03.Challenge01",
-             //"data03.txt"
-
-//                "de.hbarr.aoc2020.day03.Challenge02",
-  //              "data03.txt",
-//                "de.hbarr.aoc2020.day04.Challenge01",
-//                "data04.txt",
+                "de.hbarr.aoc2020.day04.Challenge01",
+                "data04.txt",
                 "de.hbarr.aoc2020.day04.Challenge02",
-                "data04.txt"
+                "data04.txt",
+*/
+                "de.hbarr.aoc2020.day05.Challenge01",
+                "data05.txt",
+                "de.hbarr.aoc2020.day05.Challenge02",
+                "data05.txt"
 
         );
 
