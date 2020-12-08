@@ -23,13 +23,11 @@ public class Challenge02 implements Challenge {
     @Override
     public String run(List<String> data) {
 
-        List<Pair<Integer, Integer>> slopes = Arrays.asList(new Pair[]{
-                Pair.with(1, 1),
+        List<Pair<Integer, Integer>> slopes = Arrays.asList(Pair.with(1, 1),
                 Pair.with(3, 1),
                 Pair.with(5, 1),
                 Pair.with(7, 1),
-                Pair.with(1, 2),
-        });
+                Pair.with(1, 2));
         List<Integer> allResults = new ArrayList<>();
         for (Pair<Integer, Integer> slope : slopes) {
             Position pos = new Position(0, 0, data.get(0).length());
@@ -41,7 +39,7 @@ public class Challenge02 implements Challenge {
             }
             allResults.add(trees);
         }
-        return String.valueOf(allResults.stream().reduce(1, (a, b) -> Math.multiplyExact(a, b)));
+        return String.valueOf(allResults.stream().reduce(1, Math::multiplyExact));
     }
 
     private class Position {

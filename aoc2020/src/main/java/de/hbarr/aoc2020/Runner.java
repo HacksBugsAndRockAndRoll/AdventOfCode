@@ -3,48 +3,22 @@ package de.hbarr.aoc2020;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 public class Runner {
 
     public static void main(String[] args) {
-        ClassLoader classLoader = Runner.class.getClassLoader();
-        Map<String, String> challenges = Map.of(
-                /*
-                "de.hbarr.aoc2020.day01.Challenge01",
-                "data01.txt",
-                "de.hbarr.aoc2020.day01.Challenge02",
-                "data01.txt",
-
-                "de.hbarr.aoc2020.day02.Challenge01",
-                "data02.txt",
-                "de.hbarr.aoc2020.day02.Challenge02",
-                "data02.txt",
-
-                "de.hbarr.aoc2020.day03.Challenge01",
-                "data03.txt",
-                "de.hbarr.aoc2020.day03.Challenge02",
-                "data03.txt",
-
-                "de.hbarr.aoc2020.day04.Challenge01",
-                "data04.txt",
-                "de.hbarr.aoc2020.day04.Challenge02",
-                "data04.txt",
-*/
-                "de.hbarr.aoc2020.day05.Challenge01",
-                "data05.txt",
-                "de.hbarr.aoc2020.day05.Challenge02",
-                "data05.txt"
-
-        );
+        List<String> daysToRun = Arrays.asList("07");
 
         Loader loader = new Loader();
-        challenges.forEach(
-                (clazz, file) -> {
-                    System.out.println("running " + clazz);
-                    System.out.println(instantiate(clazz, Challenge.class).run(loader.dataContent(file)));
-                }
-        );
+        daysToRun.forEach(
+                day -> {
+                    for (int i = 1; i <= 2; i++) {
+                        String clazz = "de.hbarr.aoc2020.day" + day + ".Challenge0" + i;
+                        String file = "data" + day + ".txt";
+                        System.out.println("running " + clazz);
+                        System.out.println(instantiate(clazz, Challenge.class).run(loader.dataContent(file)));
+                    }
+                });
     }
 
     public static <T> T instantiate(final String className, final Class<T> type) {

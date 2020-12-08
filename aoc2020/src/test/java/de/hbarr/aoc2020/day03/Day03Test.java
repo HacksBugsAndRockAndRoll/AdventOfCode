@@ -1,13 +1,11 @@
 package de.hbarr.aoc2020.day03;
 
 import de.hbarr.aoc2020.Loader;
-import de.hbarr.aoc2020.day03.Challenge01;
-import de.hbarr.aoc2020.day03.Challenge02;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Day03Test {
+class Day03Test {
     @Test
     void evalTestDataC01(){
         Challenge01 challenge = new Challenge01();

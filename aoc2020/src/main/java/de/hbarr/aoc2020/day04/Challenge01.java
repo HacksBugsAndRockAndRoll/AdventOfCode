@@ -32,7 +32,6 @@ public class Challenge01 implements Challenge {
             }
         }
         inlined.add(builder.toString());
-        System.out.println(inlined);
         return inlined;
     }
 }

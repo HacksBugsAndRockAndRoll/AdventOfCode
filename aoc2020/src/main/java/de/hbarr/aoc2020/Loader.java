@@ -3,7 +3,6 @@ package de.hbarr.aoc2020;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
@@ -15,6 +14,6 @@ public class Loader {
         } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         }
-        return Collections.EMPTY_LIST;
+        return Collections.emptyList();
     }
 }
