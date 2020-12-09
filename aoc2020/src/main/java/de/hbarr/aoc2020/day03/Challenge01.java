@@ -36,16 +36,10 @@ public class Challenge01 implements Challenge {
             return y;
         }
 
-        int incX(){
-            x++;
-            return getX();
-        }
-
         int incX(int by){
             x+=by;
             return getX();
         }
-
 
         int incY(){
             y++;
