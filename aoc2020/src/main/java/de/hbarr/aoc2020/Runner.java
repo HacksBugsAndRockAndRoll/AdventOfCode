@@ -7,7 +7,7 @@ import java.util.List;
 public class Runner {
 
     public static void main(String[] args) {
-        List<String> daysToRun = Arrays.asList("09");
+        List<String> daysToRun = Arrays.asList("10");
 
         Loader loader = new Loader();
         daysToRun.forEach(
