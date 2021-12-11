@@ -1,22 +1,25 @@
-package main
+package day01
 
 import (
-	"bufio"
+	"aoc2021go/utils"
 	"fmt"
-	"os"
-	"strconv"
 )
 
-func main() {
-
-	dat, _ := os.Open("configs/data_01-01")
-	scanner := bufio.NewScanner(dat)
-	scanner.Split(bufio.ScanLines)
-	data := make([]int64, 0)
-	for scanner.Scan() {
-		var current, _ = strconv.ParseInt(scanner.Text(), 10, 64)
-		data = append(data, current)
+func Task01() {
+	var data = utils.ReadFileAsIntegers("day01/data_01")
+	var increased = 0
+	for index, cur := range data {
+		if index != 0 {
+			if cur > data[index-1] {
+				increased += 1
+			}
+		}
 	}
+	fmt.Println(increased)
+}
+
+func Task02() {
+	var data = utils.ReadFileAsIntegers("day01/data_01")
 	var currentIndex = 0
 	var increased = 0
 	var v1, v2 = make([]int64, 0), make([]int64, 0)
